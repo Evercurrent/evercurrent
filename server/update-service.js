@@ -3,7 +3,7 @@
  */
 
 UpdateService = {
-  apiUrl: 'https://maintenance.projectricochet.com',
+  apiUrl: 'https://app.evercurrent.io',
   postUpdatesPath: '/ricochet-maintenance/post-update',
   
   /**
