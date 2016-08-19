@@ -3,8 +3,8 @@
  */
 
 UpdateService = {
-  apiUrl: 'https://maintenance.projectricochet.com',
-  postUpdatesPath: '/ricochet-maintenance/post-update',
+  apiUrl: 'https://app.evercurrent.io',
+  postUpdatesPath: '/evercurrent/post-update',
   
   /**
    * Check for Meteor and package (not yet implemented) updates.
@@ -81,11 +81,15 @@ UpdateService = {
     var dataJSON = JSON.stringify(data);
     var dataQueryString = Utility.toQueryString({ data: dataJSON });
     
-    return HTTP.call('POST', this.apiUrl + this.postUpdatesPath, {
+    HTTP.call('POST', this.apiUrl + this.postUpdatesPath, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       content: dataQueryString
+    }, function (error, response) {
+      if (error) {
+        console.log('Ricochet Maintenance Helper POST error:', error);
+      }
     });
   }
 };
