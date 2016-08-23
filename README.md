@@ -1,17 +1,17 @@
-# ricochet-maintenance-helper
+# Evercurrent
 
-A simple package that reports Meteor and package versions to the Ricochet Maintenance Product.
+A simple package that reports Meteor and package versions to the Evercurrent server.
 
 ## Installation
 
 ``` sh
-$ meteor add ricochet-maintenance-helper
+$ meteor add evercurrent
 ```
 
 ## Configuration
 
 Set 2 environment variables:
-* RMP_PROJECT_NAME - http://yourdomain.tld
-* RMP_KEY - The API key you were given during registration
+* EVERCURRENT_PROJECT_NAME - http://yourdomain.tld
+* EVERCURRENT_KEY - The API key you were given during registration
 
-That's it! Every hour, the Ricochet Maintenance Helper package will review your app's Meteor release and package version. If any updates are needed, they will be reported to the Ricochet Maintenance Product.
+That's it! Every hour, the Evercurrent package will review your app's Meteor release and package version. If any updates are needed, they will be reported to the Evercurrent server.
