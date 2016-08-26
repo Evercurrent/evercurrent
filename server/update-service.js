@@ -1,5 +1,5 @@
 /**
- * @file Service object that checks and reports updates to the Ricochet Maintenance API.
+ * @file Service object that checks and reports updates to the Evercurrent API.
  */
 
 UpdateService = {
@@ -48,25 +48,25 @@ UpdateService = {
   },
   
   /**
-   * Report an update to the Ricochet Maintenance Product API
+   * Report an update to the EVERCURRENT API
    *
    * @param {String} name - name of the package
    * @param {String} local - local version
    * @param {String} latest - latest version
    */
   reportUpdate (name, local, latest) {
-    var projectName = process.env.RMP_PROJECT_NAME;
+    var projectName = process.env.EVERCURRENT_PROJECT_NAME;
     if (! projectName)
-      throw new Meteor.Error('missing-configuration', 'RMP_PROJECT_NAME environment variable needs to be set');
-    var key = process.env.RMP_KEY;
+      throw new Meteor.Error('missing-configuration', 'EVERCURRENT_PROJECT_NAME environment variable needs to be set');
+    var key = process.env.EVERCURRENT_KEY;
     if (! key)
-      throw new Meteor.Error('missing-configuration', 'RMP_KEY environment variable needs to be set');
+      throw new Meteor.Error('missing-configuration', 'EVERCURRENT_KEY environment variable needs to be set');
     
-    console.log(`Ricochet Maintenance Helper - Reporting update for ${name} (local version: ${local}, latest version: ${latest})`);
+    console.log(`Evercurrent - Reporting update for ${name} (local version: ${local}, latest version: ${latest})`);
     
     var data = {
-      project_name: process.env.RMP_PROJECT_NAME,
-      key: process.env.RMP_KEY,
+      project_name: process.env.EVERCURRENT_PROJECT_NAME,
+      key: process.env.EVERCURRENT_KEY,
       module_version: Constants.version,
       api_version: Constants.apiVersion,
       updates: {
@@ -88,7 +88,7 @@ UpdateService = {
       content: dataQueryString
     }, function (error, response) {
       if (error) {
-        console.log('Ricochet Maintenance Helper POST error:', error);
+        console.log('Evercurrent POST error:', error);
       }
     });
   }
