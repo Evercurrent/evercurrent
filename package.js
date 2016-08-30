@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'Evercurrent',
+  name: 'evercurrent',
   version: '0.2.0',
   // Brief, one-line summary of the package.
   summary: 'Easy notifications for Meteor updates',
