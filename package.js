@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'projectricochet:evercurrent',
-  version: '0.2.0',
+  name: 'evercurrent:evercurrent',
+  version: '0.3.0',
   // Brief, one-line summary of the package.
   summary: 'Easy notifications for Meteor updates',
   // URL to the Git repository containing the source code for this package.
@@ -24,6 +24,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('projectricochet:evercurrent');
+  api.use('evercurrent:evercurrent');
   api.addFiles('evercurrent-tests.js');
 });
