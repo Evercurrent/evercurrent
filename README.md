@@ -5,7 +5,7 @@ A simple package that reports Meteor and package versions to the Evercurrent ser
 ## Installation
 
 ``` sh
-$ meteor add evercurrent
+$ meteor add evercurrent:evercurrent
 ```
 
 ## Configuration
